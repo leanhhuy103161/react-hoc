@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+
+import React, { useState, useEffect } from 'react';
+import HoverOpacity from './components/HoverOpacity.js'
+import AwesomeImage from './components/AwesomeImage'
+import HocHoverOpacity from './components/HocHoverOpacity';
+
+const SetHocHoverOpacity = HocHoverOpacity(AwesomeImage, 0.9)
+
+// function App() {
+//   return (
+//     <div>
+//       <HoverOpacity>
+//         <AwesomeImage src='https://source.unsplash.com/random'></AwesomeImage>
+//       </HoverOpacity>
+//     </div>
+//   );
+// }
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SetHocHoverOpacity src="https://source.unsplash.com/random" />
     </div>
   );
 }
